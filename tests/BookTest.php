@@ -151,6 +151,31 @@
             $this->assertEquals($test_book->getAuthors(), [$test_author]);
         }
 
+        function testGetAuthors()
+        {
+            //Arrange
+            $id = null;
+            $name = "A Series of Unfortunate Events";
+            $test_book = new Book($id, $name);
+            $test_book->save();
+
+            $name2 = "Lemony Snicket";
+            $test_author = new Author($id, $name2);
+            $test_author->save();
+            $test_book->addAuthor($test_author);
+
+            $name3 = "J.R.R. Tolkien";
+            $test_author2 = new Author($id, $name3);
+            $test_author2->save();
+            $test_book->addAuthor($test_author2);
+
+            //Act
+            $result = $test_book->getAuthors();
+
+            //Assert
+            $this->assertEquals([$test_author, $test_author2], $result);
+        }
+
 
 
 

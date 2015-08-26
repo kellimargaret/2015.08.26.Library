@@ -47,6 +47,7 @@
         static function deleteAll()
         {
             $GLOBALS['DB']->exec("DELETE FROM authors;");
+            $GLOBALS['DB']->exec("DELETE FROM books_authors;");
         }
 
         function delete()
@@ -75,7 +76,6 @@
                 array_push($books, $new_name);
             }
             return $books;
-
         }
 
         static function find($search_id)
@@ -90,6 +90,12 @@
 
             }
             return $found_author;
+        }
+
+        function update($new_name)
+        {
+            $GLOBALS['DB']->exec("UPDATE authors SET name = '{$new_name}' WHERE author_id = {$this->getId()};");
+            $this->setName($new_name);
         }
     }
 
