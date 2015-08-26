@@ -55,7 +55,7 @@
             $this->assertEquals([$test_book, $test_book2], $result);
         }
 
-        function testdeleteAll()
+        function testDeleteAll()
         {
             //Arrange
             $id = null;
