@@ -2,7 +2,7 @@
 
 ##### A database storing a library, its books, and its patrons.
 
-#### By Phillip Shannon
+#### By Phillip Shannon, Adam Won, Marcos Moncivais
 
 ## Description
 
@@ -30,7 +30,7 @@ This app uses the Silex framework to structure the app and Twig for the views.
 
 ### Legal
 
-Copyright (c) 2015 Phillip Shannon
+Copyright (c) 2015 Phillip Shannon, Adam Won, Marcos Moncivais
 
 This software is licensed under the MIT license.
 

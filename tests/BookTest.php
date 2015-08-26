@@ -132,7 +132,24 @@
             $this->assertEquals([$test_book2], Book::getAll());
         }
 
-        //Still needs an add author method
+        function testAddAuthor()
+        {
+            //Arrange
+            $id = null;
+            $name = "J.R.R. Tolkien";
+            $test_author = new Author($id, $name);
+            $test_author->save();
+
+            $name2 = "A Series of Unfortunate Events";
+            $test_book = new Book($id, $name2);
+            $test_book->save();
+
+            //Act
+            $test_book->addAuthor($test_author);
+
+            //Assert
+            $this->assertEquals($test_book->getAuthors(), [$test_author]);
+        }
 
 
 
