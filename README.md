@@ -1,3 +1,5 @@
+# We were about halfway through the Patron tests/class.
+
 # Library
 
 ##### A database storing a library, its books, and its patrons.
@@ -21,7 +23,7 @@ A database storing a library, its books, and its patrons.
 5. In order to get into the web directory, run $ cd web
 6. In order to start a PHP server, run $ php -S localhost:8000
 7. Direct browser to localhost:8000
-8. Keep track of those stylists!
+8. Keep track of those books!
 
 ## Technologies Used
 

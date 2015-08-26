@@ -80,6 +80,27 @@
             //Assert
             $this->assertEquals([], $result);
         }
+
+        function testFind()
+        {
+            //Arrange
+            $id = null;
+            $name = "Marcos";
+            $phone = "4444";
+            $test_patron = new Patron($id, $name, $phone);
+            $test_patron->save();
+
+            $name2 = "Phil";
+            $phone2 = "5555";
+            $test_patron2 = new Patron($id, $name2, $phone2);
+            $test_patron2->save();
+
+            //Act
+            $result = Patron::find($test_patron->getId());
+
+            //Assert
+            $this->assertEquals($test_patron, $result);
+        }
     }
 
 
