@@ -109,8 +109,28 @@
             //Assert
             $result = $test_book->getName();
             $this->assertEquals("An Unfortunate Event", $result);
-
         }
+
+        function testDeleteBook()
+        {
+            //Arrange
+            $id = null;
+            $name = "A Series of Unfortunate Events";
+            $test_book = new Book($id, $name);
+            $test_book->save();
+
+            $name2 = "Fresh Off the Boat";
+            $test_book2 = new Book($id, $name2);
+            $test_book2->save();
+
+            //Act
+            $test_book->delete();
+
+            //Assert
+            $this->assertEquals([$test_book2], Book::getAll());
+        }
+
+
 
 
     }
