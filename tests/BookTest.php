@@ -91,6 +91,24 @@
 
             //Assert
             $this->assertEquals($test_book, $result);
+        }
+
+        function testUpdate()
+        {
+            //Arrange
+            $id = null;
+            $name = "A Series of Unfortunate Events";
+            $test_book = new Book($id, $name);
+            $test_book->save();
+
+            $new_name = "An Unfortunate Event";
+
+            //Act
+            $test_book->update($new_name);
+
+            //Assert
+            $result = $test_book->getName();
+            $this->assertEquals("An Unfortunate Event", $result);
 
         }
 
