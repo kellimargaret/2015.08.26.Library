@@ -1,10 +1,8 @@
-# We were about halfway through the Patron tests/class.
-
 # Library
 
 ##### A database storing a library, its books, and its patrons.
 
-#### By Phillip Shannon, Adam Won, Marcos Moncivais
+#### By Phillip Shannon, Adam Won, Marcos Moncivais, Kelli Margaret, and Sam Martinez
 
 ## Description
 
@@ -32,7 +30,7 @@ This app uses the Silex framework to structure the app and Twig for the views.
 
 ### Legal
 
-Copyright (c) 2015 Phillip Shannon, Adam Won, Marcos Moncivais
+Copyright (c) 2015 Phillip Shannon, Adam Won, Marcos Moncivais, Kelli Margaret, and Sam Martinez
 
 This software is licensed under the MIT license.
 
