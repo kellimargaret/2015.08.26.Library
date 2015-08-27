@@ -54,6 +54,30 @@
             $this->setDueDate($new_due_date);
         }
 
+        // function addPatron($patron)
+        // {
+        //     $GLOBALS['DB']->exec("INSERT INTO checkouts (copy_id, patron_id) VALUES ({$this->getId()}, {$patron->getId()});");
+        // }
+        //
+        // function getPatron()
+        // {
+        //     $results = $GLOBALS['DB']->query(
+        //         "SELECT * FROM patrons WHERE id = {$this->getPatronId()};");
+        //
+        //     $checkouts = array();
+        //
+        //     foreach($results as $checkout) {
+        //         $id = $checkout['id'];
+        //         $patron_id = $checkout['patron_id'];
+        //         $copy_id = $checkout['copy_id'];
+        //         $due_date = $checkout['due_date'];
+        //         $new_checkout = new Checkout($id, $patron_id, $copy_id, $due_date);
+        //         array_push($checkouts, $new_checkout);
+        //     }
+        //     return $checkouts;
+        // }
+
+
         static function getAll()
         {
             $returned_checkouts = $GLOBALS['DB']->query("SELECT * FROM checkouts;");
