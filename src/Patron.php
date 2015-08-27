@@ -38,6 +38,19 @@
             $this->phone = $new_phone;
         }
 
+        function save()
+        {
+            $GLOBALS['DB']->exec("INSERT INTO patrons (name, phone) VALUES ('{$this->getName()}', '{$this->getPhone()}');");
+            $this->id = $GLOBALS['DB']->lastInsertId();
+        }
+
+        function update($new_phone)
+        {
+            $GLOBALS['DB']->exec("UPDATE patrons SET phone = '{$new_phone}' WHERE id = {$this->getId()};");
+            $this->setPhone($new_phone);
+        }
+
+        //Static functions
         static function getAll()
         {
             $returned_patrons = $GLOBALS['DB']->query("SELECT * FROM patrons;");
@@ -57,12 +70,6 @@
             $GLOBALS['DB']->exec("DELETE FROM patrons;");
             //$GLOBALS['DB']->exec("DELETE FROM checkouts;");
             //We commented this out because the librarian might want a history of book checkouts, even if the patron_id no longer points to a patron.
-        }
-
-        function save()
-        {
-            $GLOBALS['DB']->exec("INSERT INTO patrons (name, phone) VALUES ('{$this->getName()}', '{$this->getPhone()}');");
-            $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
         static function find($search_id)

@@ -101,6 +101,25 @@
             //Assert
             $this->assertEquals($test_patron, $result);
         }
+
+        function testUpdate()
+        {
+            //Arrange
+            $id = null;
+            $name = "Allen";
+            $phone = "4444";
+            $test_patron = new Patron($id, $name, $phone);
+
+            $new_phone = "6666666";
+
+            //Act
+            $test_patron->update($new_phone);
+
+            //Assert
+            $result = $test_patron->getPhone();
+            $this->assertEquals($new_phone, $result);        
+
+        }
     }
 
 

@@ -1,0 +1,8 @@
+Patron tests
+    - Update patron
+    - Delete single patron
+    - Add books to patron
+        -Checkout date
+        -Return date
+
+    - Get patrons books
