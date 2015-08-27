@@ -60,7 +60,7 @@
         {
             $GLOBALS['DB']->exec("INSERT INTO books_authors (book_id, author_id) VALUES ({$book->getId()}, {$this->getId()});");
 
-            $GLOBALS['DB']->exec("INSERT INTO copies book_id VALUES ({$book->getId()}, {$this->getId()};)");
+            $GLOBALS['DB']->exec("INSERT INTO copies (book_id) VALUES ({$book->getId()}, {$this->getId()};)");
         }
 
         function getBooks()
