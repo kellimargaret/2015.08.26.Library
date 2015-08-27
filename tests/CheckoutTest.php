@@ -28,8 +28,10 @@
         function testSave()
         {
             //Arrange
+            $patron_id = 1;
+            $copy_id = 1;
             $due_date = "2015-03-03";
-            $new_checkout = new Checkout($id = null, $due_date);
+            $new_checkout = new Checkout($id = null, $patron_id, $copy_id, $due_date);
 
             //Act
             $new_checkout->save();
@@ -43,13 +45,15 @@
         {
             //Arrange
             $id = null;
+            $patron_id = 1;
+            $copy_id = 1;
             $due_date = "2012-12-12";
-            $test_checkout = new Checkout($id, $due_date);
+            $test_checkout = new Checkout($id, $patron_id, $copy_id, $due_date);
             $test_checkout->save();
 
 
             $due_date2 = "1990-07-26";
-            $test_checkout2 = new Checkout($id, $due_date2);
+            $test_checkout2 = new Checkout($id, $patron_id, $copy_id, $due_date2);
             $test_checkout2->save();
 
             //Act
@@ -63,12 +67,14 @@
         {
             //Arrange
             $id = null;
+            $patron_id = null;
+            $copy_id = null;
             $due_date= "2012-12-12";
-            $test_checkout = new Checkout($id, $due_date);
+            $test_checkout = new Checkout($id, $patron_id, $copy_id, $due_date);
             $test_checkout->save();
 
             $due_date2 = "1989-09-04";
-            $test_checkout2 = new Checkout($id, $due_date2);
+            $test_checkout2 = new Checkout($id, $patron_id, $copy_id, $due_date2);
 
             $test_checkout2->save();
 
@@ -85,8 +91,10 @@
         {
             //Arrange
             $id = null;
+            $patron_id = null;
+            $copy_id = null;
             $due_date = "2012-12-12";
-            $test_checkout = new Checkout($id, $due_date);
+            $test_checkout = new Checkout($id, $patron_id, $copy_id, $due_date);
             $test_checkout->save();
 
             $new_due_date = "2013-03-05";
@@ -103,12 +111,16 @@
         {
             //Arrange
             $id = null;
+            $patron_id = 1;
+            $copy_id = 1;
             $due_date = "2012-12-12";
-            $test_checkout = new Checkout($id, $due_date);
+            $test_checkout = new Checkout($id, $patron_id, $copy_id, $due_date);
             $test_checkout->save();
 
+            $patron_id2 = 1;
+            $copy_id2 = 1;
             $due_date2 = "1989-09-04";
-            $test_checkout2 = new Checkout($id, $due_date2);
+            $test_checkout2 = new Checkout($id, $patron_id2, $copy_id2, $due_date2);
             $test_checkout2->save();
 
             //Act
