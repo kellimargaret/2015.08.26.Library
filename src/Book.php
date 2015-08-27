@@ -47,6 +47,7 @@
         {
             $GLOBALS['DB']->exec("INSERT INTO books_authors (book_id, author_id) VALUES ({$this->getId()}, {$author->getId()});");
         }
+        
 
         function save()
         {

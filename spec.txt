@@ -1,5 +1,4 @@
 Patron tests
-    - Delete single patron
     - Add books to patron
         -Checkout date
         -Return date
