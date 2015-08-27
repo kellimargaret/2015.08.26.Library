@@ -50,6 +50,14 @@
             $this->setPhone($new_phone);
         }
 
+        //Delete single patron
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM patrons WHERE ID = {$this->getId()};");
+            // $GLOBALS['DB']->exec("DELETE FROM books_authors WHERE book_id = {$this->getId()};");
+        }
+
+
         //Static functions
         static function getAll()
         {
